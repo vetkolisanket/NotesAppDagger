@@ -1,5 +1,7 @@
 package com.example.notesappdagger
 
-class Logger {
+import javax.inject.Inject
+
+class Logger @Inject constructor() {
     fun log(msg: String) = println("LOG: $msg")
 }

@@ -1,6 +1,8 @@
 package com.example.notesappdagger
 
-class NotesRepository(private val logger: Logger) {
+import javax.inject.Inject
+
+class NotesRepository @Inject constructor(private val logger: Logger) {
     fun getNotes(): List<String> {
         logger.log("Fetching notes")
         return listOf("Note 1", "Note 2")

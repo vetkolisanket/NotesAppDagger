@@ -17,7 +17,9 @@ import com.example.notesappdagger.ui.theme.NotesAppDaggerTheme
 
 class MainActivity : ComponentActivity() {
 
-    private val viewModel: NotesViewModel = NotesViewModel(NotesRepository(Logger()))
+    private val viewModel: NotesViewModel by lazy {
+        (application as NotesApp).appComponent.getNotesViewModel()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
