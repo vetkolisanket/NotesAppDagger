@@ -28,11 +28,15 @@ class MainActivity : ComponentActivity() {
     @Inject
     lateinit var prefs: SharedPreferences
 
+    @Inject
+    lateinit var noteEditorHelper: NoteEditorHelper
+
     override fun onCreate(savedInstanceState: Bundle?) {
-        (application as NotesApp).appComponent.inject(this)
+        (application as NotesApp).appComponent.activityComponent().create().inject(this)
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         val notes = viewModel.loadNotes()
+        noteEditorHelper.logEdit("Test Note")
         setContent {
             NotesAppDaggerTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
