@@ -1,4 +1,4 @@
-package com.example.notesappdagger
+package com.example.notesappdagger.di.scopes
 
 import javax.inject.Scope
 

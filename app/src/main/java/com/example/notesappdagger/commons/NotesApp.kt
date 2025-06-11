@@ -1,6 +1,9 @@
-package com.example.notesappdagger
+package com.example.notesappdagger.commons
 
 import android.app.Application
+import com.example.notesappdagger.di.components.AppComponent
+import com.example.notesappdagger.di.components.DaggerAppComponent
+import com.example.notesappdagger.di.modules.AppModule
 
 class NotesApp : Application() {
 

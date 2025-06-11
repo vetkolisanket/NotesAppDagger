@@ -1,5 +1,7 @@
-package com.example.notesappdagger
+package com.example.notesappdagger.di.components
 
+import com.example.notesappdagger.di.scopes.ActivityScope
+import com.example.notesappdagger.ui.activities.MainActivity
 import dagger.Subcomponent
 
 @ActivityScope

@@ -1,4 +1,4 @@
-package com.example.notesappdagger
+package com.example.notesappdagger.data.api
 
 interface Logger {
     fun log(msg: String)

@@ -1,4 +1,4 @@
-package com.example.notesappdagger
+package com.example.notesappdagger.viewmodels.factory
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

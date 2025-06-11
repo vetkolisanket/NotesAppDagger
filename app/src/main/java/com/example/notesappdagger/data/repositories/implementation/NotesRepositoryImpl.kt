@@ -1,5 +1,7 @@
-package com.example.notesappdagger
+package com.example.notesappdagger.data.repositories.implementation
 
+import com.example.notesappdagger.data.api.Logger
+import com.example.notesappdagger.data.repositories.api.NotesRepository
 import javax.inject.Inject
 import javax.inject.Singleton
 

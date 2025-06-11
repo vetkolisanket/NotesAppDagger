@@ -1,4 +1,4 @@
-package com.example.notesappdagger
+package com.example.notesappdagger.ui.activities
 
 import android.content.SharedPreferences
 import android.os.Bundle
@@ -15,7 +15,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.ViewModelProvider
+import com.example.notesappdagger.commons.NoteEditorHelper
+import com.example.notesappdagger.commons.NotesApp
 import com.example.notesappdagger.ui.theme.NotesAppDaggerTheme
+import com.example.notesappdagger.viewmodels.NotesViewModel
 import javax.inject.Inject
 
 class MainActivity : ComponentActivity() {

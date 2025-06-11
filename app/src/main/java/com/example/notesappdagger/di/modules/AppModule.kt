@@ -1,7 +1,8 @@
-package com.example.notesappdagger
+package com.example.notesappdagger.di.modules
 
 import android.content.Context
 import android.content.SharedPreferences
+import com.example.notesappdagger.commons.NotesApp
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton

@@ -1,4 +1,4 @@
-package com.example.notesappdagger
+package com.example.notesappdagger.di.annotations
 
 import androidx.lifecycle.ViewModel
 import dagger.MapKey
