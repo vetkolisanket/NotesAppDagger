@@ -51,8 +51,11 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+
     implementation(libs.dagger)
     add("kapt", "com.google.dagger:dagger-compiler:2.52")
+
+    implementation(libs.androidx.navigation.compose)
 
     testImplementation(libs.junit)
 

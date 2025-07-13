@@ -1,4 +1,4 @@
-package com.example.notesappdagger.ui
+package com.example.notesappdagger.ui.composables
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -15,7 +15,7 @@ import com.example.notesappdagger.models.Note
 import com.example.notesappdagger.ui.theme.NotesAppDaggerTheme
 
 @Composable
-fun NoteComposable(modifier: Modifier = Modifier, note: Note) {
+fun NoteComposable(note: Note) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
