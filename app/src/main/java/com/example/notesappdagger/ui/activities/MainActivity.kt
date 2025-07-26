@@ -11,7 +11,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.compose.rememberNavController
 import com.example.notesappdagger.commons.MyNavigationApp
-import com.example.notesappdagger.commons.NoteEditorHelper
 import com.example.notesappdagger.commons.NotesApp
 import com.example.notesappdagger.ui.theme.NotesAppDaggerTheme
 import com.example.notesappdagger.viewmodels.NotesViewModel
@@ -27,15 +26,11 @@ class MainActivity : ComponentActivity() {
     @Inject
     lateinit var prefs: SharedPreferences
 
-    @Inject
-    lateinit var noteEditorHelper: NoteEditorHelper
-
     override fun onCreate(savedInstanceState: Bundle?) {
         (application as NotesApp).appComponent.activityComponent().create().inject(this)
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         val notes = viewModel.loadNotes()
-        noteEditorHelper.logEdit("Test Note")
         setContent {
             NotesAppDaggerTheme {
                 val navController = rememberNavController()
