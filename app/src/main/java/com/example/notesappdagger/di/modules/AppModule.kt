@@ -1,8 +1,9 @@
 package com.example.notesappdagger.di.modules
 
 import android.content.Context
-import android.content.SharedPreferences
 import com.example.notesappdagger.commons.NotesApp
+import com.example.notesappdagger.data.local.NoteDatabase
+import com.example.notesappdagger.data.local.dao.NoteDao
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -16,8 +17,14 @@ class AppModule(private val app: NotesApp) {
 
     @Provides
     @Singleton
-    fun provideSharedPreferences(context: Context): SharedPreferences {
-        return context.getSharedPreferences("app_prefs", Context.MODE_PRIVATE)
+    fun provideNoteDatabase(appContext: Context): NoteDatabase {
+        return NoteDatabase.getDatabase(appContext)
+    }
+
+    @Provides
+    @Singleton
+    fun provideNoteDao(database: NoteDatabase): NoteDao {
+        return database.noteDao()
     }
 
 }

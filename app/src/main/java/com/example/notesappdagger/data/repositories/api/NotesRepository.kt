@@ -1,7 +1,8 @@
 package com.example.notesappdagger.data.repositories.api
 
-import com.example.notesappdagger.models.Note
+import com.example.notesappdagger.data.local.Note
+import kotlinx.coroutines.flow.Flow
 
 interface NotesRepository {
-    fun getNotes(): List<Note>
+    fun getAllNotes(): Flow<List<Note>>
 }

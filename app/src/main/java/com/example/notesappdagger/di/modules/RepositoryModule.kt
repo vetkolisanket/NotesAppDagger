@@ -1,16 +1,19 @@
 package com.example.notesappdagger.di.modules
 
+import com.example.notesappdagger.data.local.dao.NoteDao
 import com.example.notesappdagger.data.repositories.api.NotesRepository
 import com.example.notesappdagger.data.repositories.implementation.NotesRepositoryImpl
-import dagger.Binds
 import dagger.Module
+import dagger.Provides
 import javax.inject.Singleton
 
 @Module
-abstract class RepositoryModule {
+object RepositoryModule {
 
-    @Binds
+    @Provides
     @Singleton
-    abstract fun bindsNotesRepository(impl: NotesRepositoryImpl): NotesRepository
+    fun provideNotesRepository(noteDao: NoteDao): NotesRepository {
+        return NotesRepositoryImpl(noteDao)
+    }
 
 }

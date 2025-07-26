@@ -1,8 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    kotlin("kapt")
 }
-apply(plugin = "org.jetbrains.kotlin.kapt")
 
 android {
     namespace = "com.example.notesappdagger"
@@ -53,11 +53,16 @@ dependencies {
     implementation(libs.androidx.material3)
 
     implementation(libs.dagger)
-    add("kapt", "com.google.dagger:dagger-compiler:2.52")
+    kapt(libs.dagger.compiler)
 
     implementation(libs.androidx.navigation.compose)
 
+    implementation(libs.androidx.room.runtime)
+    kapt(libs.androidx.room.compiler)
+    implementation(libs.androidx.room.ktx)
+
     testImplementation(libs.junit)
+    testImplementation(libs.androidx.room.testing)
 
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
